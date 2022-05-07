@@ -1,0 +1,14 @@
+START
+1- DECLARE ch of type char to store each fetched character from file to count
+2- DECLARE count_of_words and INITIALIZE it with 0
+3- DECLARE count_of_words and INITIALIZE it with 0
+
+4- FOR EACH word in file 
+    check if the word's length gratter than 1
+    START IF
+    IF word.size() > 1:
+        count_of_words += 1;
+    ENDIF
+    ENDFOR
+5- PRINT count_of_words
+END
