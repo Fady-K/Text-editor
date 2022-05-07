@@ -1,0 +1,16 @@
+START
+1- DECLARE line of type STRING to store each fetched line from file to count
+2- DECLARE count_of_chars_without_spaces and INITIALIZE it with 0
+3- DECLARE count_of_chars_with_spaces and INITIALIZE it with 0
+4- FOR EACH ch in file 
+    STARTIF
+    IF isalpha(ch):
+        count_of_chars_without_spaces += 1
+        count_of_chars_with_spaces += 1;
+    ELSEIF isspace(ch):
+        count_of_chars_with_spaces += 1;
+    ENDIF
+    ENDFOR
+4- PRINT count_of_chars_without_spaces
+5- PRINT count_of_chars_with_spaces
+END
