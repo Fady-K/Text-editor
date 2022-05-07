@@ -3,7 +3,6 @@
 //___________________________
 using namespace std;
 
-
 //__________________________
 int main()
 {
@@ -16,12 +15,10 @@ int main()
     {
         if (choice == "1")
         {
-            
-
         }
-
+        else if (choice == "6")
+        {
+        }
     }
     display_menu(choice, program_running);
-
-
 }
