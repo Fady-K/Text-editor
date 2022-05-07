@@ -46,7 +46,7 @@ void load_file(fstream &file_to_load_content_in)
     }
 
     // open the file
-    file_to_load_content_in.open(file_path);
+    file_to_load_content_in.open(file_path, ios::in | ios::app);
 
     // if the file isn't open
     if (!file_to_load_content_in.is_open())
