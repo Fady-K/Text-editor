@@ -19,6 +19,7 @@ int main()
         }
         else if (choice == "6")
         {
+            merge(file);
         }
         else if (choice == "7")
         {
