@@ -1,0 +1,10 @@
+1- DECLARE word of type STRING to store each fetched word from file to count
+1- DECLARE count_of_words and INITIALIZE it with 0
+2- FOR EACH word in file 
+    check if the word's length gratter than 1
+    START IF
+    IF word.size() > 1:
+        count_of_words += 1;
+    ENDIF
+    ENDFOR
+4- PRINT count_of_words
