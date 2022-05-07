@@ -1,0 +1,20 @@
+start
+1- Take the file_name from user
+    START IF
+    IF file_name has extintion .txt:
+        PASS
+    ELSE IF file_name dosn't have .txt:
+        APPEND .txt to the file_name
+    ENDIF
+
+
+2- Check if the file in the current directory
+    STARTIF
+    IF TRUE:
+        PRINT("this file already exits)
+    ELSE:
+        CREATE file with the same name
+        PRINT("this a new file, i created for you")
+
+3- RETURN the file
+END
