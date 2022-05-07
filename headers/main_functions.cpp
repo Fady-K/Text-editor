@@ -1,5 +1,7 @@
 #include <iostream>
-
+#include <fstream>
+#include <string>
+#include <filesystem>
 //____________________
 using namespace std;
 
@@ -15,4 +17,55 @@ void display_menu(string &choice, bool first_time)
     // take the user desire
     cout << "Your choice: ";
     cin >> ws >> choice;
+}
+
+//___________________________
+// load file function
+void load_file(fstream &file_to_load_content_in)
+{
+    // take the file path
+    cout << "Enter file name: ";
+    string file_path;
+    getline(cin >> ws, file_path);
+    file_path += ".txt";
+
+    // check if the file exists or not
+    if (filesystem::exists(file_path))
+    {
+        cout << "This File Already Exits" << endl;
+    }
+    else if (!filesystem::exists(file_path))
+    {
+        cout << "This A new file, I Created For You" << endl;
+    }
+
+    // open the file
+    file_to_load_content_in.open(file_path);
+
+    // if the file isn't open
+    if (!file_to_load_content_in.is_open())
+    {
+        cout << "!! Can't open " << file_path << " !!" << endl;
+    }
+}
+
+// _______Smallest_id_functions_________
+
+//____________Middle_id_functions____________
+
+void count_words(fstream &file_to_count_its_words)
+{
+    string word;
+
+    int count_of_words = 0;
+
+    while (file_to_count_its_words >> word)
+    {
+        if (word.size() > 1)
+        {
+            count_of_words++;
+        }
+    }
+
+    cout << "No.words: " << count_of_words << endl;
 }
