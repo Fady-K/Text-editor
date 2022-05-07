@@ -61,6 +61,13 @@ void load_file(fstream &file_to_load_content_in)
 
 //____________Middle_id_functions____________
 
+// return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+void restore_pointer(fstream &file_to_restore_its_pointer)
+{
+    file_to_restore_its_pointer.clear();
+    file_to_restore_its_pointer.seekg(0, file_to_restore_its_pointer.beg);
+}
+
 void count_words(fstream &file_to_count_its_words)
 {
 
@@ -79,8 +86,7 @@ void count_words(fstream &file_to_count_its_words)
     cout << "#################" << endl;
 
     // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
-    file_to_count_its_words.clear();
-    file_to_count_its_words.seekg(0, file_to_count_its_words.beg);
+    restore_pointer(file_to_count_its_words);
 }
 
 //________________________________________________
@@ -98,8 +104,7 @@ void count_lines(fstream &file_to_count_its_lines)
     cout << "#################" << endl;
 
     // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
-    file_to_count_its_lines.clear();
-    file_to_count_its_lines.seekg(0, file_to_count_its_lines.beg);
+    restore_pointer(file_to_count_its_lines);
 }
 
 //_________________________________________________
@@ -131,8 +136,7 @@ void count_chars(fstream &file_to_count_its_chars)
     cout << "#################" << endl;
 
     // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
-    file_to_count_its_chars.clear();
-    file_to_count_its_chars.seekg(0, file_to_count_its_chars.beg);
+    restore_pointer(file_to_count_its_chars);
 }
 
 //___________________________________
@@ -168,6 +172,58 @@ void search_for_aword_in_file(fstream &file)
         cout << "#################" << endl;
     }
 
-    file.clear();
-    file.seekg(0, file.beg);
+    // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+    restore_pointer(file);
+}
+
+//___________________________
+// merge two files functions
+void merge(fstream &file_to_fill)
+{
+    // declare a varible of fstream data type to store data in it
+    fstream file_to_be_merged;
+    load_file(file_to_be_merged);
+
+    // significant assets
+    string line;
+    string word;
+
+    // show the original file
+    cout << "----------------------------------- Original File ------------------------------" << endl;
+    while (getline(file_to_fill, line))
+    {
+        cout << line << endl;
+    }
+
+    // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+    restore_pointer(file_to_fill);
+
+    // show the new file to merge
+    cout << "--------------------------- The New File to Merge--------------------------" << endl;
+    while (getline(file_to_be_merged, line))
+    {
+        cout << line << endl;
+    }
+
+    // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+    restore_pointer(file_to_be_merged);
+
+    // merge the two files
+    while (getline(file_to_be_merged, line))
+    {
+        file_to_fill << line << endl;
+    }
+
+    // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+    restore_pointer(file_to_fill);
+
+    cout << "-------------------------- Original File after Merge ------------------------" << endl;
+    while (getline(file_to_fill, line))
+    {
+        cout << line << endl;
+    }
+    cout << "------------------------------------------------------------------------------" << endl;
+
+    // return the pointer again to the begging of the file >> to make the file modifyable (readable) again
+    restore_pointer(file_to_fill);
 }
