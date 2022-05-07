@@ -1,0 +1,17 @@
+START
+1- Take word_to_search from the user
+2- DECLARE word of type string to store each fetched word from file
+3- DECLARE infile of type bool and INITIALIZE with False 
+4- FOR EACH word in file 
+    START IF
+    IF word == word_to_search:
+        PRINT(word_to_search in file)
+        SET infile = True
+    ENDIF
+    ENDFOR
+
+START IF 
+5- IF (! infile):
+    PRINT(word_to_search not in file)
+ENDIF
+END
