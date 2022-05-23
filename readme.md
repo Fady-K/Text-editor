@@ -4,8 +4,10 @@ This is a simple text editor, which requests the user to enter the file name (Fi
 ### System asks for the file name (file to be modified)
 Enter file name:
 If the file already exists, the system prints the following message:
+
 #################This File Already Exits#################
 IF it's a new file, the system prints another message:
+
 #################This A new file, I Created For You#################
 ## menu:
 !! Welcome !!
