@@ -472,6 +472,18 @@ void convertFToUpper(fstream &sourceFile)
     }
     restore_pointer(sourceFile);
 
+    // couvert all the file into lower case
+    // iterte over each line in the vect
+    for (int i = 0; i < vect.size(); ++i)
+    {
+        for (int j = 0; j < vect.size(); ++j)
+        {
+            // iterate over each char in the line and convert theat char into upper case
+            char c = vect[i][j];
+            c = tolower(c);
+        }
+    }
+
     for (int i = 0; i < vect.size(); i++)
     {
         vect[i][0] = toupper(vect[i][0]);
@@ -485,16 +497,13 @@ void convertFToUpper(fstream &sourceFile)
             {
                 continue;
             }
-            else
-            {
-                vect[i][j] = tolower(vect[i][j]);
-            }
         }
     }
 
     for (int i = 0; i < vect.size(); i++)
     {
-        sourceFile << vect[i] << endl;
+        sourceFile << endl
+                   << vect[i];
     }
     cout << "#################" << endl;
     cout << "!! File was CAPITALIZED succesfully !!" << endl;
