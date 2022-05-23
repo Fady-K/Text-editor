@@ -9,13 +9,12 @@ Enter file name:
 
 
 ### System checks the file existance
-#### If the file already exists:
+#### If the file already exists, the system prints the following message:
 #################
 This File Already Exits
 #################
 
-#### IF it's a new file:
-Enter file name: test2
+#### IF it's a new file, the system prints another message:
 #################
 This A new file, I Created For You
 #################
