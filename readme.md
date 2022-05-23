@@ -1,5 +1,5 @@
 # Text-editor
-This is a simple text editor, which requests the user to enter the file name (File to be modified) Afterthought, the system checks whether a file with the same name exists in the directory where the main.CPP or not. In case the file exists the pre-told directory, The menu displays it directly. Unless the system creates a new file with the given name. afterthought the system displays a menu to the user with a variety of options.
+This is a simple text editor, which requests the user to enter the file name (File to be modified) Subsequently, the system checks whether a file with the same name exists in the directory where the main.CPP is or not. In case the file exists in the pre-told directory, The menu will be displayed. Unless the file exists, The system creates a new file with the given name. Thereafter the system displays a menu to the user with a variety of options.
 ## UI
 ### System asks for the file name (file to be modified)
 Enter file name:
