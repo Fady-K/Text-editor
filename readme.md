@@ -7,8 +7,6 @@ Unless the system creates a new file with the pregiven name. after thought the s
 ### System asks for the file name (file to be modified)
 Enter file name:
 
-
-### System checks the file existance
 #### If the file already exists, the system prints the following message:
 #################
 This File Already Exits
