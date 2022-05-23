@@ -3,7 +3,7 @@ This a simple text-editor, which request the user to enter the file name (File t
 Incase the file exists the pretold directory, The menu dipslay directly.
 Unless the system creates a new file with the pregiven name. after thought the system display a menu to the user with a varity of options.
 
-##UI
+## UI
 ### System asks for the file name (file to be modified)
 Enter file name:
 
