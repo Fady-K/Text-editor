@@ -405,9 +405,14 @@ void convertToLower(fstream &sourceFile)
         }
     }
 
+    // using insertion operator(<<) to insert all string stored in vect to sourceFile
     for (int i = 0; i < vect.size(); i++)
     {
-        sourceFile << vect[i] << endl;
+        sourceFile << vect[i];
+        if (i < vect.size() - 1)
+        {
+            sourceFile << endl;
+        }
     }
 
     cout << "#################" << endl;
@@ -443,9 +448,14 @@ void convertToUpper(fstream &sourceFile)
         }
     }
 
+    // using insertion operator(<<) to insert all string stored in vect to sourceFile
     for (int i = 0; i < vect.size(); i++)
     {
-        sourceFile << vect[i] << endl;
+        sourceFile << vect[i];
+        if (i < vect.size() - 1)
+        {
+            sourceFile << endl;
+        }
     }
     cout << "#################" << endl;
     cout << "!! File was converted into UPPERCASE succesfully !!" << endl;
@@ -476,7 +486,7 @@ void convertFToUpper(fstream &sourceFile)
     // iterte over each line in the vect
     for (int i = 0; i < vect.size(); ++i)
     {
-        for (int j = 0; j < vect.size(); ++j)
+        for (int j = 0; j < vect[i].size(); ++j)
         {
             // iterate over each char in the line and convert theat char into upper case
             char c = vect[i][j];
@@ -495,16 +505,21 @@ void convertFToUpper(fstream &sourceFile)
         {
             if (isspace(vect[i][j]))
             {
-                continue;
+                vect[i][j+1] = toupper(vect[i][j+1]);
             }
         }
     }
 
+    // using insertion operator(<<) to insert all string stored in vect to sourceFile
     for (int i = 0; i < vect.size(); i++)
     {
-        sourceFile << endl
-                   << vect[i];
+        sourceFile << vect[i];
+        if (i < vect.size() - 1)
+        {
+            sourceFile << endl;
+        }
     }
+
     cout << "#################" << endl;
     cout << "!! File was CAPITALIZED succesfully !!" << endl;
     cout << "#################" << endl;
